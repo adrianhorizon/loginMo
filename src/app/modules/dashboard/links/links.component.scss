@@ -1,0 +1,22 @@
+@import "app/styles/variables.scss", "app/styles/colors.scss", "app/styles/mixins.scss";
+
+.container-button {
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.submit-button {
+    width: 20%;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+    background-color: $blue-bg-mo;
+}
+
+@include breakpoint(max-width, small) {
+    .submit-button {
+        width: 100%;
+    }
+}
+

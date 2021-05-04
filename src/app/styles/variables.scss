@@ -1,0 +1,37 @@
+@import "app/styles/colors.scss";
+
+$small-size: 480px;
+$medium-size: 768px;
+$large-size: 1024px;
+
+$stroke-button: (stroke: $blue-mo,
+    danger: $red-mo,
+    pending: $yellow-alert-font) !default;
+
+$stroke-button-bg: (stroke-bg: $green-alert-bg,
+    danger-bg: $red-alert-bg,
+    pending-bg: $yellow-alert-bg) !default;
+
+$breakpoints: (small: $small-size,
+    medium: $medium-size,
+    large: $large-size) !default;
+
+@mixin breakpoint($size-width, $size) {
+    $breakpoint-value: map-get($breakpoints, $size);
+
+    @media screen and($size-width: $breakpoint-value) {
+        @content;
+    }
+}
+
+@mixin button-stroke($color-bg, $color) {
+    width: 90px;
+    padding: 8px;
+    display: block;
+    text-align: center;
+
+    $color-value: map-get($stroke-button, $color);
+    $color-bg-value: map-get($stroke-button-bg, $color-bg);
+
+    @include button-status-stroke($color-bg-value, $color-value);
+}

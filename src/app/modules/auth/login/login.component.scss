@@ -1,0 +1,60 @@
+@import "app/styles/variables.scss", "app/styles/colors.scss", "app/styles/mixins.scss";
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+}
+
+.card {
+    max-width: 600px;
+    padding: 40px;
+}
+
+.title-input {
+    color: $grey-font-mo;
+    font-size: 1rem;
+}
+
+.box {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.submit-button {
+    @extend .box;
+    display: flex;
+    width: 80%;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: white;
+    background-color: $blue-bg-mo;
+}
+
+p {
+    @extend .box;
+    max-width: 250px;
+    margin-top: 20px;
+    font-weight: 400;
+    text-align: center;
+
+    .parrafe-term {
+        color: $blue-bg-mo;
+    }
+}
+
+@include breakpoint(max-width, small) {
+    .container-login {
+        flex-direction: row;
+        height: auto;
+    }
+}
+
+:host ::ng-deep {
+    @include form-field-outline;
+}

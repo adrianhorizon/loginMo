@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <form [formGroup]="addLinkForm">
+        <div class="container-form">
+            <mat-label>Url To Save</mat-label>
+            <mat-form-field appearance="outline">
+                <input type="url" formControlName="url" matInput placeholder="www.example.com">
+                <mat-error class="error-message" *ngIf="addLinkForm?.invalid">Campo requerido</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="container-form">
+            <mat-label>Name of Url</mat-label>
+            <mat-form-field appearance="outline">
+                <input type="text" formControlName="name" matInput placeholder="test pagina">
+                <mat-error class="error-message" *ngIf="addLinkForm?.invalid">Campo requerido</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="container-form container-button">
+            <button class="submit-button" [disabled]="addLinkForm?.invalid" (click)="addTodo(addLinkForm?.value)"
+                mat-flat-button>ADD</button>
+        </div>
+    </form>
+</div>

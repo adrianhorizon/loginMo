@@ -1,0 +1,85 @@
+@import "app/styles/variables.scss", "app/styles/colors.scss", "app/styles/mixins.scss";
+
+.column-profile {
+    flex: 0.2;
+    height: 320px;
+    text-align: center;
+
+    .container-avatar {
+        padding: 20px;
+
+        .image-avatar {
+            border-radius: 60px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.25px;
+        }
+    }
+}
+
+.column-url-ls {
+    flex: 0.2;
+    height: 320px;
+    padding: 3em;
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.column-url {
+    flex: 1;
+    height: 300px;
+}
+
+.column {
+    padding: 3em;
+    margin: 10px;
+    box-shadow: 0px 0px 30px rgba(199, 199, 199, 0.55);
+    border-radius: 6px;
+}
+
+.title-url {
+    color: $blue-bg-mo;
+    font-size: 36px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.title-name {
+    margin-top: 10px;
+    font-weight: 500;
+    color: $black-mo;
+    font-size: 14px;
+}
+
+.col-main {
+    flex: 1;
+}
+
+mat-icon {
+    color: $red-alert-font;
+    font-size: 40px;
+}
+
+@include breakpoint(min-width, small) {
+    .container {
+        display: flex;
+    }
+}
+
+@include breakpoint(max-width, small) {
+    .column {
+        padding: 2em;
+    }
+
+    .column-url-ls {
+        display: none;
+    }
+
+    .title-url {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,10 @@
+@mixin form-field-outline {
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: $grey-mo;
+    }
+
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick,
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-label {
+        color: $blue-bg-mo;
+    }
+}

@@ -1,0 +1,36 @@
+<div class="container-dashboard">
+    <div>
+        <img src="assets/img/links-logo.png">
+    </div>
+    <button mat-stroked-button (click)="logout()" class="container-button">Logout</button>
+</div>
+<div class="container">
+    <div class="column column-profile">
+        <div class="container-avatar">
+            <img class="image-avatar" [src]="user?.avatar" />
+            <p>{{ user?.name }}</p>
+            <p>{{ user?.email }}</p>
+        </div>
+    </div>
+    <div class="column column-url">
+        <app-links></app-links>
+    </div>
+</div>
+
+<div class="container">
+    <div class="column-url-ls">
+    </div>
+    <div class="column-url">
+        <div class="container column" *ngFor="let item of delete">
+            <div class="col-main">
+                <a target="_blank" [href]="item?.url" class="title-url">{{ item?.url }}</a>
+                <p class="title-name">{{ item?.name }}</p>
+            </div>
+            <div>
+                <button mat-icon-button (click)="deleteTodo(item?.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
